@@ -94,8 +94,7 @@ impl Component for Chat {
                             .map(|u| UserProfile {
                                 name: u.into(),
                                 avatar: format!(
-                                    "https://avatars.dicebear.com/api/adventurer-neutral/{}.svg",
-                                    u
+                                    "https://ih1.redbubble.net/image.1891541352.1109/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
                                 )
                                     .into(),
                             })
@@ -156,7 +155,7 @@ impl Component for Chat {
                                             <div>{u.name.clone()}</div>
                                         </div>
                                         <div class="text-xs text-gray-400">
-                                            {"Hi there!"}
+                                            {"haha yes"}
                                         </div>
                                     </div>
                                 </div>
@@ -166,8 +165,9 @@ impl Component for Chat {
                 </div>
                 <div class="grow h-screen flex flex-col">
                     <div class="w-full h-14 border-b-2 border-gray-300"><div class="text-xl p-3">{"💬 Chat!"}</div></div>
-                    <div class="w-full grow overflow-auto border-b-2 border-gray-300">
-                        {
+                    <div class="w-full grow overflow-auto border-b-2 border-gray-300"
+                        style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi439WVDVOT0Q-vO-KwGV8rYyNdeg3NrA0u49KTRlaFoEg23Li_voKwdJ3QSX7XI3O9mjdjdgfXfGvGaK8h-ieUbupXH0bUYhqk6eFIJN8LFshuJvdPfyJsvggGNeiMZzNOlXa-yYE-FpyckLBkNMMp_Fc1VEkQgyZh1pkC0QPnOaeuh933z7DD0ZJU5Q/s1920-rw/HEROSCREEN.CC-12042022COZY-ROOM-PC-WALLPAPER.png'); background-size: cover; background-position: center; opacity: 0.8;"
+                    >                        {
                             self.messages.iter().map(|m| {
                                 let user = self.users.iter().find(|u| u.name == m.from).unwrap();
                                 html!{
